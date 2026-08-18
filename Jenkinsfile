@@ -1,8 +1,8 @@
 pipeline {
      agent{
         docker{
-            image 'playwright/chrome:playwright-1.56.1'
-            args '--entrypoint='
+            image 'mcr.microsoft.com/playwright:latest'
+            args '-u root --entrypoint='
         }
     }
 
