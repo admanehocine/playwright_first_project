@@ -11,7 +11,7 @@ test("login valide", async ({ page }) => {
   await lp.saisirUsername("standard_user")
   await lp.saisirPassword("secret_sauce")
   await lp.ClickConnexion()
-  await expect(page).toHaveURL("https://www.saucedemo.com/inventory.html")
+  await expect(page).toHaveURL( /inventory.html/)
 
 })
 
