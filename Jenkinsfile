@@ -1,10 +1,20 @@
 pipeline {
-    agent any
+     agent{
+        docker{
+            image 'playwright/chrome:playwright-1.56.1'
+            args '--entrypoint='
+        }
+    }
 
     stages {
-        stage('Hello') {
+        stage('installation dependance') {
             steps {
-                echo 'Hello World'
+                sh 'npm install'
+            }
+        }
+        stage('LAncement de test') {
+            steps {
+                sh 'npx playwright test'
             }
         }
     }
